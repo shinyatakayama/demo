@@ -5,5 +5,5 @@ import java.util.List;
 
 public class StreamSample {
 	List<String> list = Arrays.asList("Apple", "Orange", "Melon");
-	list.stream.forEach(System.out::println);
+	
 }
