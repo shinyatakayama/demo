@@ -1,6 +1,5 @@
 package com.example.demo;
 
-@FunctionalInterface
 public interface Sample {
-	void sayHi();
+	void sayHi(String name, int n);
 }

@@ -30,8 +30,5 @@ public class DemoApplication {
 //		}
 		
 		sampleEntityList.stream().map(e -> e.getName()).forEach(System.out::println);
-		
-		
 	}
-
-}
+};
