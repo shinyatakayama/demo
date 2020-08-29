@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 interface InterfaceTest {
@@ -23,8 +24,14 @@ public class Main {
  
         // ラムダ式の記述
         l.forEach(System.out::println);
+        
+    	List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5);
+    	integerList.stream().map(i -> "要素は" + i + "です").forEach(i -> System.out.println(i));
+
+    	List<Integer> integerList1 = Arrays.asList(1, 2, 3, 4, 5);
+    	integerList1.stream()
+    	        .sorted(Comparator.naturalOrder())
+    	        .forEach(i -> System.out.println(i));
 	}
 	
-	
-
 }
