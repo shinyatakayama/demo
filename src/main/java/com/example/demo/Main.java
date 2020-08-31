@@ -38,6 +38,14 @@ public class Main {
 		// nullの場合は空文字を指定するため、実行結果は0
 		System.out.println(getName(key).orElse("").length());
 
+		
+		List<String> list = Arrays.asList("C", "C++", "Java", "Scala", "Ruby");
+		long count = list.stream()
+	            .filter(s -> s.startsWith("C"))
+	            .mapToInt(s -> s.length())
+	            .sum();
+		
+		System.out.println(count);
 	}
 
 	private static Optional<String> getName(String key) {
@@ -48,5 +56,7 @@ public class Main {
 
 		return Optional.ofNullable(dataMap.get(key));
 	}
+	
+
 
 }
