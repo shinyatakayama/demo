@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 interface InterfaceTest {
 	// 抽象メソッド
@@ -46,6 +47,12 @@ public class Main {
 	            .sum();
 		
 		System.out.println(count);
+		
+		List<Integer> numbers = Arrays.asList(3, 1, -4, 1, -5, 9, -2, 6, 5, 3, 5);
+		List<Integer> result = numbers.stream()
+		        .filter(number -> number > 0)
+		        .collect(Collectors.toList());
+		System.out.println(result);
 	}
 
 	private static Optional<String> getName(String key) {
