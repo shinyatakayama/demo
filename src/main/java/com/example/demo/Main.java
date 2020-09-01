@@ -48,11 +48,11 @@ public class Main {
 		
 		System.out.println(count);
 		
-		List<Integer> numbers = Arrays.asList(3, 1, -4, 1, -5, 9, -2, 6, 5, 3, 5);
-		List<Integer> result = numbers.stream()
-		        .filter(number -> number > 0)
-		        .collect(Collectors.toList());
-		System.out.println(result);
+//		List<Integer> numbers = Arrays.asList(3, 1, -4, 1, -5, 9, -2, 6, 5, 3, 5);
+//		List<Integer> result = numbers.stream()
+//		        .filter(number -> number > 0)
+//		        .collect(Collectors.toList());
+//		System.out.println(result);
 	}
 
 	private static Optional<String> getName(String key) {
