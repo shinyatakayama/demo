@@ -53,6 +53,12 @@ public class Main {
 //		        .filter(number -> number > 0)
 //		        .collect(Collectors.toList());
 //		System.out.println(result);
+		
+		List<String> strs = Arrays.asList("hoge", "fuga", "bars");
+
+		// ラムダ式
+		boolean b = strs.stream().anyMatch(s -> s.equals("fuga"));
+		System.out.println(b);
 	}
 
 	private static Optional<String> getName(String key) {
