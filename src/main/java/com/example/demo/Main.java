@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 interface InterfaceTest {
@@ -67,6 +68,9 @@ public class Main {
 		for (String str : set) {
 			System.out.println(str); // 結果：Linux、Windows、macOS
 		}
+		
+		Function<String, Integer> function = string -> Integer.parseInt(string);
+        System.out.println(function.apply("12345"));
 	}
 
 	private static Optional<String> getName(String key) {
