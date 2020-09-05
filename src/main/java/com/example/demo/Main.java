@@ -68,9 +68,17 @@ public class Main {
 		for (String str : set) {
 			System.out.println(str); // 結果：Linux、Windows、macOS
 		}
-		
+
 		Function<String, Integer> function = string -> Integer.parseInt(string);
-        System.out.println(function.apply("12345"));
+		System.out.println(function.apply("12345"));
+
+		Function<String, String> wrapDoubleQuotation = str -> "\"" + str + "\"";
+		Function<String, String> wrapSingleQuotation = str -> "'" + str + "'";
+
+		String resultFunction = wrapDoubleQuotation.apply("hoge");
+		System.out.println(resultFunction);
+		String resultFunction1 = wrapDoubleQuotation.apply(wrapSingleQuotation.apply("hoge"));
+		System.out.println(resultFunction1);
 	}
 
 	private static Optional<String> getName(String key) {
