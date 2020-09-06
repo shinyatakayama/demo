@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 interface InterfaceTest {
@@ -79,6 +80,10 @@ public class Main {
 		System.out.println(resultFunction);
 		String resultFunction1 = wrapDoubleQuotation.apply(wrapSingleQuotation.apply("hoge"));
 		System.out.println(resultFunction1);
+		
+        Predicate<String> predicate = string -> string.isEmpty();
+        System.out.println(predicate.test(""));
+        System.out.println(predicate.test("hoge"));
 	}
 
 	private static Optional<String> getName(String key) {
