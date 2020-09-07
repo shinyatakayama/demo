@@ -84,6 +84,11 @@ public class Main {
         Predicate<String> predicate = string -> string.isEmpty();
         System.out.println(predicate.test(""));
         System.out.println(predicate.test("hoge"));
+        
+        Predicate<String> checker =  s -> s.equals("Java");
+        boolean result1 = checker.test("Java");
+        System.out.println(result1); //true
+        
 	}
 
 	private static Optional<String> getName(String key) {
