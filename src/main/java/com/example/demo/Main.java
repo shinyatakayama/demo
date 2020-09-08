@@ -89,6 +89,9 @@ public class Main {
         boolean result1 = checker.test("Java");
         System.out.println(result1); //true
         
+        Optional<String> value = Optional.empty();
+        String lang = value.orElse("en");
+        System.out.println(lang);
 	}
 
 	private static Optional<String> getName(String key) {
