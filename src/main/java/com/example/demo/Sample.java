@@ -13,5 +13,10 @@ public class Sample {
 
 		final List<Integer> numList = numTextList.stream().filter(Objects::nonNull).map(Integer::parseInt)
 				.collect(Collectors.toList());
+		
+	    String test = "";
+	    test = test.isEmpty() ? null : test.replace("-", "");
+	    System.out.println(test);
+		
 	}
 }
