@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -18,5 +19,15 @@ public class Sample {
 	    test = test.isEmpty() ? null : test.replace("-", "");
 	    System.out.println(test);
 		
+	    List<String> stringList = new ArrayList<String>();
+	    stringList.add("japan");
+	    stringList.add("usa");
+	    stringList.add("england");
+
+	    System.out.println(stringList);
+
+	    List<String> filterList = stringList.stream().sorted().collect(Collectors.toList());
+
+	    System.out.println(filterList);
 	}
 }
