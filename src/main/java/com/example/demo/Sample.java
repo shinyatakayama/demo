@@ -31,21 +31,31 @@ public class Sample {
 
 		System.out.println(filterList);
 		List<Employee> employees = new ArrayList<Employee>();
-		Employee employee = new Employee("John", 25, 3000.0, 9922001);
-		Employee employee2 = new Employee("John", 25, 3000.0, 9922001);
-		Employee employee3 = new Employee("John", 25, 3000.0, 9922001);
+		Employee employee = new Employee("john", 25, 3000.0, 9922001);
+		Employee employee2 = new Employee("sohn", 25, 3000.0, 9922001);
+		Employee employee3 = new Employee("aohn", 25, 3000.0, 9922001);
 		employees.add(employee);
 		employees.add(employee2);
 		employees.add(employee3);
+		
+		Employee test2[] = new Employee[] {employee,employee2,employee3};
 
 		Comparator<Employee> comparator = Comparator.comparing(Employee::getName);
-//	    Arrays.sort(employees, comparator);
+	    Arrays.sort(test2, comparator);
+	    List<Employee> idList = Arrays.asList(test2);
+	    
+	   idList.stream().forEach(string -> System.out.println(string.getName()));
 
 		List<Item> list = Arrays.asList(new Item(9, "apple"), new Item(3, "lemon"), new Item(6, "peach"),
 				new Item(6, "banana"));
 
 		List<Item> sorted = list.stream().sorted(Comparator.comparing(Item::getId)).collect(Collectors.toList());
 		
-		System.out.println(sorted);
+//		System.out.println(sorted);
+		
+		String ids[] = new String[]{"a1", "a2", "a3"};
+//		List<String> idList = Arrays.asList(ids);
+		
+		
 	}
 }
