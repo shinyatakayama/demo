@@ -2,6 +2,8 @@ package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,5 +32,20 @@ public class DemoApplication {
 //		}
 		
 		sampleEntityList.stream().map(e -> e.getName()).forEach(System.out::println);
+		
+		Runnable runnable1 = () -> System.out.println("ABC");
+		runnable1.run();
+		
+		Predicate<String> predicate3 = s -> "ABC".equals(s);
+		System.out.println(predicate3.test("ABC"));
+		
+		Function<String, Integer> function3 = s -> {
+		    if ("ABC".equals(s)) {
+		        return 1;
+		    } else {
+		        return 0;
+		    }
+		};
+		System.out.println(function3.apply("ABC"));
 	}
 };
