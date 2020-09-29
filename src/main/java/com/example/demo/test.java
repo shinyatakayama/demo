@@ -3,6 +3,7 @@ package com.example.demo;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class Test {
 	public static void main(String[] args) {
@@ -10,6 +11,10 @@ public class Test {
 				new Item(6, "banana"));
 
 		list.stream().sorted(Comparator.comparing(Item::getId)).map(id -> id.getName()).forEach(i -> System.out.println(i));
+		
+		int i = 0;
+        Supplier<Integer> supplier = () -> i;
+	
 	}
 	
 	
