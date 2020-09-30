@@ -48,17 +48,11 @@ public class Main {
 		long count = list.stream().filter(s -> s.startsWith("C")).mapToInt(s -> s.length()).sum();
 
 		List<Integer> integerList2 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-		List<Integer> aa = integerList2.stream()
-		.filter(i -> i % 2 == 0)
-		.map(i -> Arrays.asList(i))
-		.reduce(new ArrayList<>(), (a, b) -> {
-			a.addAll(b);
-			return a;
-		});
-		
-		
-		
-
+		List<Integer> aa = integerList2.stream().filter(i -> i % 2 == 0).map(i -> Arrays.asList(i))
+				.reduce(new ArrayList<>(), (a, b) -> {
+					a.addAll(b);
+					return a;
+				});
 		System.out.println(count);
 
 		List<Integer> numbers = Arrays.asList(3, 1, -4, 1, -5, 9, -2, 6, 5, 3, 5);
