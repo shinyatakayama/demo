@@ -52,8 +52,6 @@ public class Sample {
 
 		List<Item> sorted = list.stream().sorted(Comparator.comparing(Item::getId)).collect(Collectors.toList());
 		
-//		System.out.println(sorted);
-		
 		String ids[] = new String[]{"a1", "a2", "a3"};
 //		List<String> idList = Arrays.asList(ids);
 		
