@@ -47,6 +47,29 @@ public class Test {
 		Collections.sort(lista, c);
 
 		System.out.println(list);
+		
+		Function<String, String> firstChar = s -> s.substring(0, 1);
+		Function<String, String> duplicate = s -> s + s;
+		 
+		String s1 = applyFunctions("ABC", firstChar);
+		System.out.println(s1); // → "A"
+		 
+		String s2 = applyFunctions("ABC", duplicate);
+		System.out.println(s2); // → "ABCABC"
+		 
+		String s3 = applyFunctions("ABC", firstChar, duplicate);
+		System.out.println(s3); 
+		
+	}
+
+	static String applyFunctions(String s, Function<String, String>... functions) {
+	    String ret = s;
+	 
+	    for (Function<String, String> function : functions) {
+	        ret = function.apply(ret);
+	    }
+	 
+	    return ret;
 	}
 
 }
