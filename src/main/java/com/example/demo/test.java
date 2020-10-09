@@ -47,29 +47,43 @@ public class Test {
 		Collections.sort(lista, c);
 
 		System.out.println(list);
-		
+
 		Function<String, String> firstChar = s -> s.substring(0, 1);
 		Function<String, String> duplicate = s -> s + s;
-		 
+
 		String s1 = applyFunctions("ABC", firstChar);
 		System.out.println(s1); // → "A"
-		 
+
 		String s2 = applyFunctions("ABC", duplicate);
 		System.out.println(s2); // → "ABCABC"
-		 
+
 		String s3 = applyFunctions("ABC", firstChar, duplicate);
-		System.out.println(s3); 
+		System.out.println(s3);
+
+		String[] array = { "おはようございます", "こんにちは", "こんばんは" };
+		test(array);
+		System.out.println(array[0]);
 		
+		String test1 = "test";
+		test1 = "あいうえお";
+		
+
 	}
 
 	static String applyFunctions(String s, Function<String, String>... functions) {
-	    String ret = s;
-	 
-	    for (Function<String, String> function : functions) {
-	        ret = function.apply(ret);
-	    }
-	 
-	    return ret;
+		String ret = s;
+
+		for (Function<String, String> function : functions) {
+			ret = function.apply(ret);
+		}
+
+		return ret;
 	}
 
+	public static void test(String[] array) {
+		array = new String[3];
+		array[0] = "Hello";
+		System.out.println(array[0]);
+		System.out.println(array[1]);
+	}
 }
